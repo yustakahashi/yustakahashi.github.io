@@ -3,164 +3,625 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="精神疾患の生物学的異質性と、臨床経過・生活史・主観的体験の多様性をどのように結びつけられるかを研究しています。">
   <title>高橋 優輔 | 精神科医・研究者</title>
-  <meta name="description" content="精神科医・研究者 — 東京大学大学院医学系研究科 脳神経医学専攻 臨床神経精神医学講座 精神医学">
   <style>
 :root {
-  --bg: #f7f7f4;
-  --paper: #ffffff;
-  --text: #1e2428;
+  --paper: #f7f6f2;
+  --surface: #fffefa;
+  --ink: #172026;
   --muted: #667078;
-  --line: #dcdedb;
-  --accent: #244e66;
-  --max: 940px;
+  --line: #d7dad8;
+  --accent: #24566b;
+  --accent-soft: #e7eff1;
+  --max: 1080px;
 }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--paper);
+  color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
                "Yu Gothic", "Noto Sans JP", Helvetica, Arial, sans-serif;
   line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
 }
-a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-.wrap { max-width: var(--max); margin: 0 auto; padding: 0 30px; }
-.topbar {
-  padding: 20px 0 0;
-  display: flex; justify-content: flex-end;
-  font-size: .92rem;
+a {
+  color: inherit;
+  text-decoration-color: rgba(36, 86, 107, .45);
+  text-underline-offset: .18em;
+  text-decoration-thickness: 1px;
 }
-.topbar a { text-decoration: none; }
-header { padding: 54px 0 48px; border-bottom: 1px solid var(--line); }
-.hero { display: grid; grid-template-columns: 1fr 150px; gap: 44px; align-items: center; }
+a:hover { color: var(--accent); }
+
+.shell { max-width: var(--max); margin: 0 auto; padding: 0 34px; }
+
+.sitebar {
+  border-bottom: 1px solid var(--line);
+  background: rgba(247, 246, 242, .94);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+.sitebar-inner {
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.wordmark {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: .84rem;
+  color: var(--muted);
+}
+.nav a { text-decoration: none; }
+.language {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 10px;
+  color: var(--ink) !important;
+  background: var(--surface);
+}
+
+.hero {
+  padding: 104px 0 82px;
+  border-bottom: 1px solid var(--line);
+}
+.eyebrow {
+  color: var(--accent);
+  font-size: .78rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+.ja .eyebrow { letter-spacing: .08em; }
 h1 {
-  margin: 0 0 10px; font-size: clamp(2.4rem, 7vw, 4.7rem);
-  line-height: 1.03; letter-spacing: -.045em;
+  margin: 0;
+  max-width: 850px;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(3rem, 7.5vw, 6.3rem);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: -.045em;
 }
-.role { color: var(--muted); margin: 0 0 24px; }
-.lead { font-size: 1.16rem; max-width: 710px; margin: 0; }
-.avatar {
-  width: 145px; height: 145px; object-fit: cover;
-  border-radius: 50%; border: 1px solid var(--line); background: var(--paper);
+.ja h1 {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+  letter-spacing: -.035em;
 }
-nav { margin-top: 30px; display: flex; gap: 12px 22px; flex-wrap: wrap; }
-nav a { text-decoration: none; }
-main { padding-bottom: 56px; }
-section { padding: 42px 0; border-bottom: 1px solid var(--line); }
-section:last-child { border-bottom: 0; }
-h2 { margin: 0 0 22px; font-size: 1.12rem; letter-spacing: .075em; text-transform: uppercase; }
-.ja h2 { text-transform: none; letter-spacing: .05em; }
-.about { max-width: 790px; }
-.about p { margin: 0 0 14px; }
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.card {
-  padding: 20px; background: var(--paper); border: 1px solid var(--line);
-  border-radius: 12px;
+.affiliation {
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: .98rem;
 }
-.card h3, .pub h3, .line-item h3 { margin: 0 0 7px; font-size: 1rem; line-height: 1.55; }
-.card p { margin: 0; color: var(--muted); font-size: .94rem; }
-.pub, .line-item { padding: 17px 0; border-top: 1px solid var(--line); }
-.pub:first-child, .line-item:first-child { border-top: 0; padding-top: 0; }
-.pub h3 a { color: inherit; }
-.meta { color: var(--muted); margin: 0; font-size: .91rem; }
-.positions { margin: 0; padding-left: 1.25rem; }
-.links { display: flex; flex-wrap: wrap; gap: 10px 20px; }
-footer { padding: 0 0 42px; color: var(--muted); font-size: .86rem; }
-@media (max-width: 720px) {
-  .wrap { padding: 0 20px; }
-  .hero { grid-template-columns: 1fr; }
-  .avatar { width: 110px; height: 110px; order: -1; }
-  .grid { grid-template-columns: 1fr; }
-  header { padding-top: 36px; }
+.statement {
+  margin: 58px 0 0 auto;
+  max-width: 760px;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(1.55rem, 3vw, 2.45rem);
+  line-height: 1.33;
+  letter-spacing: -.02em;
+}
+.ja .statement {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 52px;
+  padding: 74px 0;
+  border-bottom: 1px solid var(--line);
+}
+.section-label {
+  margin: 0;
+  font-size: .77rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--muted);
+  font-weight: 700;
+}
+.ja .section-label { letter-spacing: .08em; }
+.section-body { min-width: 0; }
+.prose {
+  max-width: 760px;
+  font-size: 1.06rem;
+}
+.prose p { margin: 0 0 1.1em; }
+
+.themes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.theme {
+  padding: 24px 28px 4px 0;
+  border-right: 1px solid var(--line);
+}
+.theme + .theme { padding-left: 28px; }
+.theme:last-child { border-right: 0; }
+.theme-number {
+  color: var(--accent);
+  font-family: "Iowan Old Style", Georgia, serif;
+  font-size: .9rem;
+  margin-bottom: 24px;
+}
+.theme h3 {
+  margin: 0 0 12px;
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.28rem;
+  line-height: 1.25;
+}
+.ja .theme h3 {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+.theme p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .93rem;
+  line-height: 1.7;
+}
+
+.record {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 20px;
+  padding: 21px 0;
+  border-top: 1px solid var(--line);
+}
+.record:first-child { border-top: 0; padding-top: 0; }
+.record-year {
+  color: var(--muted);
+  font-family: "Iowan Old Style", Georgia, serif;
+  font-size: .96rem;
+}
+.record-main h3,
+.funding-main h3 {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: 1.08rem;
+  line-height: 1.48;
+  font-weight: 600;
+}
+.ja .record-main h3,
+.ja .funding-main h3 {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+.record-main p,
+.funding-main p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: .91rem;
+}
+
+.section-note {
+  margin-top: 25px;
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+.subhead {
+  color: var(--accent);
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+.ja .subhead { letter-spacing: .06em; }
+.subhead.spaced { margin-top: 46px; }
+
+.funding-row {
+  display: grid;
+  grid-template-columns: 145px 1fr;
+  gap: 22px;
+  padding: 21px 0;
+  border-top: 1px solid var(--line);
+}
+.funding-period {
+  color: var(--muted);
+  font-size: .88rem;
+  font-variant-numeric: tabular-nums;
+}
+.funding-titleline {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.funding-titleline h3 { flex: 1; }
+.status {
+  flex: 0 0 auto;
+  font-size: .69rem;
+  letter-spacing: .04em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  margin-top: 1px;
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.profile-links a {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: var(--surface);
+  font-size: .88rem;
+}
+.profile-links a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.footer {
+  padding: 35px 0 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+@media (max-width: 820px) {
+  .nav .optional { display: none; }
+  .hero { padding: 72px 0 58px; }
+  .statement { margin-top: 42px; }
+  .section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 56px 0;
+  }
+  .themes { grid-template-columns: 1fr; }
+  .theme, .theme + .theme {
+    padding: 22px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .theme:last-child { border-bottom: 0; }
+  .theme-number { margin-bottom: 8px; }
+}
+@media (max-width: 560px) {
+  .shell { padding: 0 20px; }
+  .wordmark { font-size: .92rem; }
+  .nav { gap: 12px; }
+  .record { grid-template-columns: 58px 1fr; gap: 12px; }
+  .funding-row { grid-template-columns: 1fr; gap: 6px; }
+  .funding-titleline { display: block; }
+  .status { display: inline-block; margin-top: 8px; }
+  .footer { flex-direction: column; }
 }
 </style>
 </head>
 <body class="ja">
-  <div class="wrap topbar"><a href="index.html" lang="en">English</a></div>
-  <header>
-    <div class="wrap hero">
-      <div>
-        <h1>高橋 優輔</h1>
-        <p class="role">精神科医・研究者<br>東京大学大学院医学系研究科 脳神経医学専攻 臨床神経精神医学講座 精神医学</p>
-        <p class="lead">精神疾患の生物学的異質性と、臨床経過・生活史・主観的体験の多様性をどのように結びつけられるかを研究しています。</p>
-        <nav><a href="#about">研究について</a>
-<a href="#research">研究テーマ</a>
-<a href="#publications">主要論文</a>
-<a href="#projects">研究課題</a>
-<a href="#awards">受賞</a>
-<a href="#profiles">プロフィール</a></nav>
-      </div>
-      <img class="avatar" src="https://researchmap.jp/takahashiyusuke/avatar.jpeg" alt="高橋 優輔">
+  <div class="sitebar">
+    <div class="shell sitebar-inner">
+      <div class="wordmark">高橋 優輔</div>
+      <nav class="nav" aria-label="Primary">
+        <a class="optional" href="#research">研究</a>
+        <a class="optional" href="#publications">論文</a>
+        <a class="optional" href="#funding">研究費</a>
+        <a class="language" href="index.html">English</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="shell">
+      <div class="eyebrow">精神科医・研究者</div>
+      <h1>高橋 優輔</h1>
+      <p class="affiliation">東京大学大学院医学系研究科 脳神経医学専攻 臨床神経精神医学講座 精神医学</p>
+      <div class="statement">精神疾患の生物学的異質性と、臨床経過・生活史・主観的体験の多様性をどのように結びつけられるかを研究しています。</div>
     </div>
   </header>
 
-  <main class="wrap">
-    <section id="about">
-      <h2>研究について</h2>
-      <div class="about"><p>精神疾患のある人の生きづらさが、脳や身体、生活史、他者との関係のなかでどのような体験として生じるのか、また、その個人差をどのように治療や支援につなげられるのかを研究しています。特に、生物学的な異質性と、主観的体験や臨床経過の多様性との関係に関心があります。</p>
-<p><strong>1. 精神疾患の生物学的異質性</strong></p>
-<p>統合失調症を中心に、多施設の大規模MRIデータを機械学習で解析し、脳構造・機能の個人差と年齢、症状、臨床像との関連を検討しています。</p>
-<p><strong>2. 生活史・主観的体験と臨床経過</strong></p>
-<p>臨床データベースや診療録を用いて、小児期逆境体験を含む生活史、精神病理、薬物療法への反応、治療経過を研究しています。自然言語処理も活用し、これらを脳画像などの生物学的情報と結びつけることを目指しています。</p>
-<p><strong>3. 臨床・実践</strong></p>
-<p>臨床では、精神科外来や総合病院でのリエゾン診療、リカバリー支援などに携わり、力動的精神医学に基づいた個人・集団精神療法を実践しています。22q11.2欠失症候群などの希少疾患に関する研究や、患者・市民参画にも取り組んでおり、当事者の方々との対話から生じた問いを研究と支援に還元することを大切に考えています。</p></div>
+  <main class="shell">
+    <section class="section" id="about">
+      <h2 class="section-label">研究について</h2>
+      <div class="section-body prose">
+<p>精神疾患のある人の生きづらさが、脳や身体、生活史、他者との関係のなかでどのような体験として生じるのか、また、その個人差をどのように治療や支援につなげられるのかを研究しています。</p>
+<p>特に、生物学的な異質性と、主観的体験や臨床経過の多様性との関係に関心があり、脳画像、臨床データベース、診療録の自然言語処理などを用いて検討しています。</p>
+</div>
     </section>
 
-    <section id="research">
-      <h2>研究テーマ</h2>
-      <div class="grid"><article class="card"><h3>精神疾患の生物学的異質性</h3><p>統合失調症を中心に、多施設の大規模MRIデータとデータ駆動型手法を用いて、脳構造・機能の個人差と年齢、症状、臨床像との関係を検討しています。</p></article>
-<article class="card"><h3>生活史・主観的体験と臨床経過</h3><p>臨床データベースや診療録を用いて、小児期逆境体験を含む生活史、精神病理、薬物療法への反応、治療経過を研究しています。自然言語処理も活用しています。</p></article>
-<article class="card"><h3>臨床・実践とコ・プロダクション</h3><p>リエゾン診療、リカバリー支援、力動的精神医学に基づく実践に加え、22q11.2欠失症候群などの希少疾患研究や患者・市民参画に取り組んでいます。</p></article></div>
-    </section>
-
-    <section id="publications">
-      <h2>主要論文</h2>
-      <article class="pub"><h3><a href="https://doi.org/10.21203/rs.3.rs-10398741/v1" target="_blank" rel="noopener">Normative modeling in neuroimaging across psychiatric and neurological disorders: a systematic review and the NORMA reporting checklist</a></h3><p class="meta">Springer Science and Business Media LLC · 2026</p></article>
-<article class="pub"><h3>小児期逆境体験の質的差異と精神疾患患者の抑うつ症状プロファイルとの関連</h3><p class="meta">精神神経学雑誌 · 2026</p></article>
-<article class="pub"><h3><a href="https://doi.org/10.1002/pcn5.70260" target="_blank" rel="noopener">Meta‐analysis of &lt;sup&gt;1&lt;/sup&gt; H‐MRS glutamate profiles in adult schizophrenia spectrum disorders and autism spectrum disorder: Study protocol</a></h3><p class="meta">Psychiatry and Clinical Neurosciences Reports · 2025</p></article>
-<article class="pub"><h3>22q11.2 欠失症候群における病名告知の現状と関連要因の検討</h3><p class="meta">日本遺伝カウンセリング学会誌 · 2025</p></article>
-<article class="pub"><h3><a href="https://doi.org/10.1002/pcn5.209" target="_blank" rel="noopener">Physical and psychosocial factors associated with fatigue in individuals with 22q11.2 deletion syndrome</a></h3><p class="meta">Psychiatry and Clinical Neurosciences Reports · 2024</p></article>
-<article class="pub"><h3><a href="https://doi.org/10.1002/pcn5.46" target="_blank" rel="noopener">Young carers in Japan: Reliability and validity testing of the BBC/University of Nottingham young carers survey questionnaire and prevalence estimation in 5000 adolescents</a></h3><p class="meta">Psychiatry and Clinical Neurosciences Reports · 2022</p></article>
-      <p><a href="https://researchmap.jp/takahashiyusuke" target="_blank" rel="noopener">すべての業績をresearchmapで見る →</a></p>
-    </section>
-
-    
-        <section id="projects">
-          <h2>主な研究課題・研究費</h2>
-          <article class="line-item"><h3>大規模脳MRIの機械学習による統合失調症発症前後・思春期脳発達のサブタイプ分類</h3><p class="meta">日本学術振興会 科学研究費助成事業 特別研究員奨励費 · 2026-04–2029-03</p></article>
-<article class="line-item"><h3>再外傷化を防ぐ診療支援の共同創造－医療トラウマに配慮した実装研究</h3><p class="meta">公益財団法人 上廣倫理財団 / 令和7年度・公募研究助成 · 2026-03–2027-02</p></article>
-<article class="line-item"><h3>てんかんモニタリングユニット入院患者における小児期逆境体験(ACEs)と心理学的・神経生理学的指標との関連</h3><p class="meta">公益財団法人神経研究所 / 2025年度大沼賞（てんかん医療志向若手育成事業） · 2025-06–2026-06</p></article>
-<article class="line-item"><h3>高度先進医療を提供する大学病院におけるリエゾン精神医学の動向と展望</h3><p class="meta">公益財団法人ファイザーヘルスリサーチ振興財団 / 第33回 ヘルスリサーチ研究に関する研究助成 国内共同研究（満39歳以下） · 2024-12–2025-11</p></article>
-<article class="line-item"><h3>日本の中高年・高齢者の精神病理における心的外傷体験と社会環境の変遷の影響：4490名の精神科入院患者の後ろ向き観察研究</h3><p class="meta">公益財団法人 大和証券財団 2024年度（第51回）調査研究助成 · 2024-10–2025-09</p></article>
-<article class="line-item"><h3>難病とともに身体・精神・社会的課題を抱える子どもとその家族の疲労の量的・質的研究</h3><p class="meta">小林製薬青い鳥財団/小林製薬青い鳥財団研究助成金 · 2023-04–2024-03</p></article>
-        </section>
-        <section id="awards">
-          <h2>受賞</h2>
-          <article class="line-item"><h3>2025年度大沼賞（てんかん医療志向若手育成事業）</h3><p class="meta">公益財団法人 神経研究所 · 2025</p></article>
-<article class="line-item"><h3>精神神経学雑誌投稿奨励賞（学術総会部門）</h3><p class="meta">日本精神神経学会 · 2025</p></article>
-<article class="line-item"><h3>日本精神神経学会学術総会 優秀発表賞</h3><p class="meta">日本精神神経学会 · 2025</p></article>
-<article class="line-item"><h3>聖路加国際病院 業績発表 優秀賞</h3><p class="meta">2022</p></article>
-<article class="line-item"><h3>大坪修・鉄門フェローシップ</h3><p class="meta">東京大学医学部 MD研究者育成プログラム室 · 2019</p></article>
-        </section>
-        
-    
-        <section id="positions">
-          <h2>現在の所属・職歴</h2>
-          <ul class="positions"><li>特別研究員 DC1, 独立行政法人 日本学術振興会</li>
-<li>病院診療医, 東京大学医学部附属病院 精神神経科</li></ul>
-        </section>
+    <section class="section" id="research">
+      <h2 class="section-label">研究テーマ</h2>
+      <div class="section-body">
+        <div class="themes">
+        <article class="theme">
+          <div class="theme-number">01</div>
+          <h3>精神疾患の生物学的異質性</h3>
+          <p>統合失調症を中心に、多施設の大規模MRIデータとデータ駆動型手法を用いて、脳構造・機能の個人差と年齢、症状、臨床像との関係を検討しています。</p>
+        </article>
         
 
-    <section id="profiles">
-      <h2>プロフィール</h2>
-      <div class="links"><a href="https://researchmap.jp/takahashiyusuke" target="_blank" rel="noopener">researchmap</a><a href="https://orcid.org/0009-0001-5457-7900" target="_blank" rel="noopener">ORCID</a><a href="https://github.com/yustakahashi" target="_blank" rel="noopener">GitHub</a></div>
+        <article class="theme">
+          <div class="theme-number">02</div>
+          <h3>生活史・主観的体験と臨床経過</h3>
+          <p>臨床データベースや診療録を用いて、小児期逆境体験を含む生活史、精神病理、薬物療法への反応、治療経過を研究しています。</p>
+        </article>
+        
+
+        <article class="theme">
+          <div class="theme-number">03</div>
+          <h3>臨床・実践とコ・プロダクション</h3>
+          <p>リエゾン診療、リカバリー支援、力動的精神医学に基づく実践と、患者・市民参画を研究上の問いにつなげています。</p>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <h2 class="section-label">主要論文</h2>
+      <div class="section-body">
+        
+        <article class="record">
+          <div class="record-year">2026</div>
+          <div class="record-main">
+            <h3><a href="https://doi.org/10.21203/rs.3.rs-10398741/v1" target="_blank" rel="noopener">Normative modeling in neuroimaging across psychiatric and neurological disorders: a systematic review and the NORMA reporting checklist</a></h3>
+            <p></p>
+          </div>
+        </article>
+        
+
+        <article class="record">
+          <div class="record-year">2026</div>
+          <div class="record-main">
+            <h3>小児期逆境体験の質的差異と精神疾患患者の抑うつ症状プロファイルとの関連</h3>
+            <p>精神神経学雑誌</p>
+          </div>
+        </article>
+        
+
+        <article class="record">
+          <div class="record-year">2025</div>
+          <div class="record-main">
+            <h3><a href="https://doi.org/10.1002/pcn5.70260" target="_blank" rel="noopener">Meta‐analysis of &lt;sup&gt;1&lt;/sup&gt; H‐MRS glutamate profiles in adult schizophrenia spectrum disorders and autism spectrum disorder: Study protocol</a></h3>
+            <p>Psychiatry and Clinical Neurosciences Reports</p>
+          </div>
+        </article>
+        
+
+        <article class="record">
+          <div class="record-year">2025</div>
+          <div class="record-main">
+            <h3>22q11.2 欠失症候群における病名告知の現状と関連要因の検討</h3>
+            <p>日本遺伝カウンセリング学会誌</p>
+          </div>
+        </article>
+        
+
+        <article class="record">
+          <div class="record-year">2024</div>
+          <div class="record-main">
+            <h3><a href="https://doi.org/10.1002/pcn5.209" target="_blank" rel="noopener">Physical and psychosocial factors associated with fatigue in individuals with 22q11.2 deletion syndrome</a></h3>
+            <p>Psychiatry and Clinical Neurosciences Reports</p>
+          </div>
+        </article>
+        
+
+        <article class="record">
+          <div class="record-year">2022</div>
+          <div class="record-main">
+            <h3><a href="https://doi.org/10.1002/pcn5.46" target="_blank" rel="noopener">Young carers in Japan: Reliability and validity testing of the BBC/University of Nottingham young carers survey questionnaire and prevalence estimation in 5000 adolescents</a></h3>
+            <p>Psychiatry and Clinical Neurosciences Reports</p>
+          </div>
+        </article>
+        
+        <p class="section-note">
+          <a href="https://researchmap.jp/takahashiyusuke" target="_blank" rel="noopener">すべての業績をresearchmapで見る →</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="funding">
+      <h2 class="section-label">研究費・研究課題</h2>
+      <div class="section-body">
+        <div class="subhead">進行中</div>
+            <article class="funding-row">
+              <div class="funding-period">2026-07–現在</div>
+              <div class="funding-main">
+                <div class="funding-titleline">
+                  <h3>共同創造に基づく難病の当事者・家族のニーズに対する支援実装の基盤構築 ―22q11.2欠失症候群全国Webアンケート調査 第2期 ―</h3><span class="status">進行中</span>
+                </div>
+                
+              </div>
+            </article>
+            
+
+            <article class="funding-row">
+              <div class="funding-period">2026-04–2029-03</div>
+              <div class="funding-main">
+                <div class="funding-titleline">
+                  <h3>大規模脳MRIの機械学習による統合失調症発症前後・思春期脳発達のサブタイプ分類</h3><span class="status">進行中</span>
+                </div>
+                <p>日本学術振興会 科学研究費助成事業 特別研究員奨励費</p>
+              </div>
+            </article>
+            
+
+            <article class="funding-row">
+              <div class="funding-period">2026-03–2027-02</div>
+              <div class="funding-main">
+                <div class="funding-titleline">
+                  <h3>再外傷化を防ぐ診療支援の共同創造－医療トラウマに配慮した実装研究</h3><span class="status">進行中</span>
+                </div>
+                <p>令和7年度・公募研究助成</p>
+              </div>
+            </article>
+            
+
+            <article class="funding-row">
+              <div class="funding-period">2025-08–現在</div>
+              <div class="funding-main">
+                <div class="funding-titleline">
+                  <h3>トラウマインフォームドな共同意思決定ツールの開発と評価 ー22q11.2欠失症候群の当事者・家族との共同創造を通じた回復支援モデルの検討ー</h3><span class="status">進行中</span>
+                </div>
+                
+              </div>
+            </article>
+            
+
+            <article class="funding-row">
+              <div class="funding-period">2024-08–現在</div>
+              <div class="funding-main">
+                <div class="funding-titleline">
+                  <h3>病名告知に伴う不安体験の解明</h3><span class="status">進行中</span>
+                </div>
+                
+              </div>
+            </article>
+            
+<div class="subhead spaced">終了</div>
+            <article class="funding-row">
+              <div class="funding-period">2025-11–2026-03</div>
+              <div class="funding-main">
+                <div class="funding-titleline">
+                  <h3>IRCN Retreat Brainstorming Awards</h3>
+                </div>
+                
+              </div>
+            </article>
+            
+
+            <article class="funding-row">
+              <div class="funding-period">2025-07–2026-02</div>
+              <div class="funding-main">
+                <div class="funding-titleline">
+                  <h3>「ワーク・ライフ・バランスを重視する研究者のための アカデミアキャリア構築スキルコース」研究費支援</h3>
+                </div>
+                
+              </div>
+            </article>
+            
+
+            <article class="funding-row">
+              <div class="funding-period">2025-06–2026-06</div>
+              <div class="funding-main">
+                <div class="funding-titleline">
+                  <h3>てんかんモニタリングユニット入院患者における小児期逆境体験(ACEs)と心理学的・神経生理学的指標との関連</h3>
+                </div>
+                <p>2025年度大沼賞（てんかん医療志向若手育成事業）</p>
+              </div>
+            </article>
+            
+
+            <article class="funding-row">
+              <div class="funding-period">2024-12–2025-11</div>
+              <div class="funding-main">
+                <div class="funding-titleline">
+                  <h3>高度先進医療を提供する大学病院におけるリエゾン精神医学の動向と展望</h3>
+                </div>
+                <p>第33回 ヘルスリサーチ研究に関する研究助成 国内共同研究（満39歳以下）</p>
+              </div>
+            </article>
+            
+
+            <article class="funding-row">
+              <div class="funding-period">2024-10–2025-09</div>
+              <div class="funding-main">
+                <div class="funding-titleline">
+                  <h3>日本の中高年・高齢者の精神病理における心的外傷体験と社会環境の変遷の影響：4490名の精神科入院患者の後ろ向き観察研究</h3>
+                </div>
+                
+              </div>
+            </article>
+            
+
+            <article class="funding-row">
+              <div class="funding-period">2023-04–2024-03</div>
+              <div class="funding-main">
+                <div class="funding-titleline">
+                  <h3>難病とともに身体・精神・社会的課題を抱える子どもとその家族の疲労の量的・質的研究</h3>
+                </div>
+                
+              </div>
+            </article>
+            
+      </div>
+    </section>
+
+    <section class="section" id="awards">
+      <h2 class="section-label">主な受賞</h2>
+      <div class="section-body">
+        
+        <article class="record compact">
+          <div class="record-year">2025</div>
+          <div class="record-main">
+            <h3>2025年度大沼賞（てんかん医療志向若手育成事業）</h3>
+            <p>公益財団法人 神経研究所</p>
+          </div>
+        </article>
+        
+
+        <article class="record compact">
+          <div class="record-year">2025</div>
+          <div class="record-main">
+            <h3>精神神経学雑誌投稿奨励賞（学術総会部門）</h3>
+            <p>日本精神神経学会</p>
+          </div>
+        </article>
+        
+
+        <article class="record compact">
+          <div class="record-year">2025</div>
+          <div class="record-main">
+            <h3>日本精神神経学会学術総会 優秀発表賞</h3>
+            <p>日本精神神経学会</p>
+          </div>
+        </article>
+        
+
+        <article class="record compact">
+          <div class="record-year">2022</div>
+          <div class="record-main">
+            <h3>聖路加国際病院 業績発表 優秀賞</h3>
+            <p></p>
+          </div>
+        </article>
+        
+
+        <article class="record compact">
+          <div class="record-year">2019</div>
+          <div class="record-main">
+            <h3>大坪修・鉄門フェローシップ</h3>
+            <p>東京大学医学部 MD研究者育成プログラム室</p>
+          </div>
+        </article>
+        
+      </div>
+    </section>
+
+    <section class="section" id="profiles">
+      <h2 class="section-label">プロフィール</h2>
+      <div class="section-body">
+        <div class="profile-links"><a href="https://researchmap.jp/takahashiyusuke" target="_blank" rel="noopener">researchmap</a><a href="https://orcid.org/0009-0001-5457-7900" target="_blank" rel="noopener">ORCID</a><a href="https://github.com/yustakahashi" target="_blank" rel="noopener">GitHub</a></div>
+      </div>
     </section>
   </main>
 
-  <footer class="wrap">
-    © 2026 Yusuke Takahashi · Updated from researchmap export 2026-10-02
+  <footer class="shell footer">
+    <div>© 2026 Yusuke Takahashi</div>
+    <div>Academic record updated from researchmap</div>
   </footer>
 </body>
 </html>
