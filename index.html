@@ -3,256 +3,135 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yusuke Takahashi, MD | Psychiatrist & Researcher</title>
-  <meta name="description" content="Yusuke Takahashi is a psychiatrist and researcher studying heterogeneity in psychiatric disorders through neuroimaging, clinical trajectories, clinical records, and lived experience.">
+  <title>Yusuke Takahashi | Psychiatrist &amp; Researcher</title>
+  <meta name="description" content="Psychiatrist &amp; Researcher — Department of Neuropsychiatry, Graduate School of Medicine, The University of Tokyo">
   <style>
-    :root {
-      --bg: #fbfbfa;
-      --text: #202124;
-      --muted: #666b73;
-      --line: #dedede;
-      --panel: #ffffff;
-      --accent: #1f4b67;
-      --max: 860px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      line-height: 1.7;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-    }
-
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    header {
-      padding: 88px 0 54px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2.25rem, 6vw, 4.3rem);
-      letter-spacing: -0.045em;
-      line-height: 1.02;
-      font-weight: 700;
-    }
-
-    .role {
-      margin: 0 0 26px;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    .lead {
-      max-width: 720px;
-      margin: 0;
-      font-size: 1.22rem;
-      line-height: 1.65;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 22px;
-      margin-top: 34px;
-      font-size: 0.96rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-    }
-
-    nav a:hover {
-      border-bottom-color: currentColor;
-    }
-
-    main {
-      padding: 16px 0 68px;
-    }
-
-    section {
-      padding: 42px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    section:last-child {
-      border-bottom: 0;
-    }
-
-    h2 {
-      margin: 0 0 20px;
-      font-size: 1.15rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    p {
-      margin: 0 0 16px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 20px 22px;
-    }
-
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 1.02rem;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 18px;
-    }
-
-    footer {
-      padding: 28px 0 48px;
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    @media (max-width: 680px) {
-      header { padding-top: 58px; }
-      .grid { grid-template-columns: 1fr; }
-      .wrap { padding: 0 20px; }
-    }
-  </style>
+:root {
+  --bg: #f7f7f4;
+  --paper: #ffffff;
+  --text: #1e2428;
+  --muted: #667078;
+  --line: #dcdedb;
+  --accent: #244e66;
+  --max: 940px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+               "Yu Gothic", "Noto Sans JP", Helvetica, Arial, sans-serif;
+  line-height: 1.75;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 30px; }
+.topbar {
+  padding: 20px 0 0;
+  display: flex; justify-content: flex-end;
+  font-size: .92rem;
+}
+.topbar a { text-decoration: none; }
+header { padding: 54px 0 48px; border-bottom: 1px solid var(--line); }
+.hero { display: grid; grid-template-columns: 1fr 150px; gap: 44px; align-items: center; }
+h1 {
+  margin: 0 0 10px; font-size: clamp(2.4rem, 7vw, 4.7rem);
+  line-height: 1.03; letter-spacing: -.045em;
+}
+.role { color: var(--muted); margin: 0 0 24px; }
+.lead { font-size: 1.16rem; max-width: 710px; margin: 0; }
+.avatar {
+  width: 145px; height: 145px; object-fit: cover;
+  border-radius: 50%; border: 1px solid var(--line); background: var(--paper);
+}
+nav { margin-top: 30px; display: flex; gap: 12px 22px; flex-wrap: wrap; }
+nav a { text-decoration: none; }
+main { padding-bottom: 56px; }
+section { padding: 42px 0; border-bottom: 1px solid var(--line); }
+section:last-child { border-bottom: 0; }
+h2 { margin: 0 0 22px; font-size: 1.12rem; letter-spacing: .075em; text-transform: uppercase; }
+.ja h2 { text-transform: none; letter-spacing: .05em; }
+.about { max-width: 790px; }
+.about p { margin: 0 0 14px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.card {
+  padding: 20px; background: var(--paper); border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.card h3, .pub h3, .line-item h3 { margin: 0 0 7px; font-size: 1rem; line-height: 1.55; }
+.card p { margin: 0; color: var(--muted); font-size: .94rem; }
+.pub, .line-item { padding: 17px 0; border-top: 1px solid var(--line); }
+.pub:first-child, .line-item:first-child { border-top: 0; padding-top: 0; }
+.pub h3 a { color: inherit; }
+.meta { color: var(--muted); margin: 0; font-size: .91rem; }
+.positions { margin: 0; padding-left: 1.25rem; }
+.links { display: flex; flex-wrap: wrap; gap: 10px 20px; }
+footer { padding: 0 0 42px; color: var(--muted); font-size: .86rem; }
+@media (max-width: 720px) {
+  .wrap { padding: 0 20px; }
+  .hero { grid-template-columns: 1fr; }
+  .avatar { width: 110px; height: 110px; order: -1; }
+  .grid { grid-template-columns: 1fr; }
+  header { padding-top: 36px; }
+}
+</style>
 </head>
-<body>
+<body class="">
+  <div class="wrap topbar"><a href="ja.html" lang="ja">日本語</a></div>
   <header>
-    <div class="wrap">
-      <h1>Yusuke Takahashi, MD</h1>
-      <p class="role">
-        Psychiatrist &amp; Researcher<br>
-        Graduate School of Medicine, The University of Tokyo<br>
-        JSPS Research Fellow (DC1)
-      </p>
-
-      <p class="lead">
-        I study heterogeneity in psychiatric disorders by connecting neuroimaging,
-        clinical trajectories, clinical records, and lived experience. My work asks
-        how biological variation and individual life histories can be described
-        together in ways that are clinically meaningful.
-      </p>
-
-      <nav aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#profiles">Profiles</a>
-      </nav>
+    <div class="wrap hero">
+      <div>
+        <h1>Yusuke Takahashi</h1>
+        <p class="role">Psychiatrist &amp; Researcher<br>Department of Neuropsychiatry, Graduate School of Medicine, The University of Tokyo</p>
+        <p class="lead">Connecting biological heterogeneity with clinical trajectories and lived experience in psychiatry.</p>
+        <nav><a href="#about">About</a>
+<a href="#research">Research</a>
+<a href="#publications">Publications</a>
+<a href="#profiles">Profiles</a></nav>
+      </div>
+      <img class="avatar" src="https://researchmap.jp/takahashiyusuke/avatar.jpeg" alt="Yusuke Takahashi">
     </div>
   </header>
 
   <main class="wrap">
     <section id="about">
       <h2>About</h2>
-      <p>
-        I am a psychiatrist and doctoral researcher at the University of Tokyo.
-        My research focuses on psychiatric heterogeneity across multiple levels,
-        including brain structure, developmental and environmental exposures,
-        clinical course, and patients' own accounts of illness and recovery.
-      </p>
-      <p>
-        Alongside quantitative neuroimaging and clinical data analysis, I am
-        interested in how psychiatric research can better connect biological
-        findings with treatment decisions, clinical narratives, and lived experience.
-      </p>
+      <div class="about">
+<p>I am a psychiatrist and doctoral researcher at the University of Tokyo. My work examines how heterogeneity in psychiatric disorders emerges across brain and body, life history, clinical course, and lived experience, and how these differences can inform treatment and support.</p>
+<p>I combine neuroimaging, clinical databases, and natural language processing with questions arising from clinical practice and patient and public involvement.</p>
+</div>
     </section>
 
     <section id="research">
       <h2>Research</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Neuroimaging &amp; heterogeneity</h3>
-          <p>
-            Structural MRI and data-driven approaches to characterize variation
-            within schizophrenia, bipolar disorder, and related clinical phenotypes.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Development &amp; adversity</h3>
-          <p>
-            Neurodevelopmental trajectories, childhood adversity, and the ways
-            developmental and environmental factors relate to later psychiatric outcomes.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Clinical records &amp; NLP</h3>
-          <p>
-            Natural language processing and large-scale clinical records to study
-            treatment response, symptoms, life-course information, and clinical decision-making.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Lived experience &amp; clinical meaning</h3>
-          <p>
-            Approaches that connect quantitative findings with patient-reported
-            experience, narrative, and co-production in psychiatric research.
-          </p>
-        </article>
-      </div>
+      <div class="grid"><article class="card"><h3>Biological heterogeneity</h3><p>I use large-scale, multi-site neuroimaging data and data-driven methods to study individual differences in brain structure and function across schizophrenia and related psychiatric conditions.</p></article>
+<article class="card"><h3>Life history, lived experience &amp; clinical course</h3><p>I study childhood adversity, psychopathology, treatment response, and clinical trajectories using clinical databases and electronic health records, including natural language processing.</p></article>
+<article class="card"><h3>Clinical practice &amp; co-production</h3><p>My clinical and research interests include consultation-liaison psychiatry, recovery-oriented care, psychodynamic psychiatry, rare conditions such as 22q11.2 deletion syndrome, and patient and public involvement.</p></article></div>
     </section>
 
     <section id="publications">
-      <h2>Publications &amp; Academic Activities</h2>
-      <p>
-        A complete and updated record of publications, presentations, grants,
-        awards, and other academic activities is available on researchmap.
-      </p>
-      <p>
-        <a href="https://researchmap.jp/takahashiyusuke" target="_blank" rel="noopener">
-          View my researchmap profile →
-        </a>
-      </p>
+      <h2>Selected Publications</h2>
+      <article class="pub"><h3><a href="https://doi.org/10.21203/rs.3.rs-10398741/v1" target="_blank" rel="noopener">Normative modeling in neuroimaging across psychiatric and neurological disorders: a systematic review and the NORMA reporting checklist</a></h3><p class="meta">Springer Science and Business Media LLC · 2026</p></article>
+<article class="pub"><h3>小児期逆境体験の質的差異と精神疾患患者の抑うつ症状プロファイルとの関連</h3><p class="meta">精神神経学雑誌 · 2026</p></article>
+<article class="pub"><h3><a href="https://doi.org/10.1002/pcn5.70260" target="_blank" rel="noopener">Meta‐analysis of &lt;sup&gt;1&lt;/sup&gt; H‐MRS glutamate profiles in adult schizophrenia spectrum disorders and autism spectrum disorder: Study protocol</a></h3><p class="meta">Psychiatry and Clinical Neurosciences Reports · 2025</p></article>
+<article class="pub"><h3>22q11.2 欠失症候群における病名告知の現状と関連要因の検討</h3><p class="meta">日本遺伝カウンセリング学会誌 · 2025</p></article>
+<article class="pub"><h3><a href="https://doi.org/10.1002/pcn5.209" target="_blank" rel="noopener">Physical and psychosocial factors associated with fatigue in individuals with 22q11.2 deletion syndrome</a></h3><p class="meta">Psychiatry and Clinical Neurosciences Reports · 2024</p></article>
+<article class="pub"><h3><a href="https://doi.org/10.1002/pcn5.46" target="_blank" rel="noopener">Young carers in Japan: Reliability and validity testing of the BBC/University of Nottingham young carers survey questionnaire and prevalence estimation in 5000 adolescents</a></h3><p class="meta">Psychiatry and Clinical Neurosciences Reports · 2022</p></article>
+      <p><a href="https://researchmap.jp/takahashiyusuke" target="_blank" rel="noopener">View the full publication and activity record on researchmap →</a></p>
     </section>
+
+    
+    
 
     <section id="profiles">
       <h2>Profiles</h2>
-      <div class="links">
-        <a href="https://researchmap.jp/takahashiyusuke" target="_blank" rel="noopener">researchmap</a>
-        <a href="https://github.com/yustakahashi" target="_blank" rel="noopener">GitHub</a>
-      </div>
+      <div class="links"><a href="https://researchmap.jp/takahashiyusuke" target="_blank" rel="noopener">researchmap</a><a href="https://orcid.org/0009-0001-5457-7900" target="_blank" rel="noopener">ORCID</a><a href="https://github.com/yustakahashi" target="_blank" rel="noopener">GitHub</a></div>
     </section>
   </main>
 
   <footer class="wrap">
-    © 2026 Yusuke Takahashi
+    © 2026 Yusuke Takahashi · Updated from researchmap export 2026-10-02
   </footer>
 </body>
 </html>
